@@ -1,5 +1,5 @@
 ## Link Deployment
-http://theresia-tarianingsih-wowlashop.pbp.cs.ui.ac.id/
+http://theresia-tarianingsih-wowlashopp.pbp.cs.ui.ac.id/
 
 # Soal dan Jawaban Pertanyaan
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
