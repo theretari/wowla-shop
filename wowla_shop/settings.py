@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(7nkdii9b+9i^&#h&z)vk*i9yyc#ggt1rnm+jjqp6t0+_e9@6q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "theresia-tarianingsih-wowlashopp.pbp.cs.ui.ac.id"]
 
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'wowla_shop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,4 +123,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# CSRF_TRUSTED_ORIGINS = ["http://localhost","http://127.0.0.1","http://theresia-tarianingsih-wowlashopp.pbp.cs.ui.ac.id/", "https://pbp.cs.ui.ac.id/theresia.tarianingsih/wowlashopp/"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost","http://127.0.0.1","http://theresia-tarianingsih-wowlashopp.pbp.cs.ui.ac.id/", "https://pbp.cs.ui.ac.id/theresia.tarianingsih/wowlashopp/"]
