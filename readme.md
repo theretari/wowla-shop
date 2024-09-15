@@ -18,6 +18,16 @@ http://theresia-tarianingsih-wowlashopp.pbp.cs.ui.ac.id/
 
 
 # Screensshot Postman
+mengakses xml
+![Screenshot 2024-09-15 233301](https://github.com/user-attachments/assets/bedcab50-31bf-4f4c-81e9-7a5bfea825b4)
+mengakses json
+![Screenshot 2024-09-15 233619](https://github.com/user-attachments/assets/eb7a9971-ca76-45f1-b857-c03854e16432)
+![Screenshot 2024-09-15 233632](https://github.com/user-attachments/assets/391800d8-e765-4d20-83ec-2e3daffc7f00)
+mengakses xml by ID
+![Screenshot 2024-09-15 233911](https://github.com/user-attachments/assets/d2d2fdc6-b7ea-4448-bb4c-11886560858f)
+mengakses json by ID
+![Screenshot 2024-09-15 233956](https://github.com/user-attachments/assets/49f25838-7afe-4975-bf46-fa88e58ab4ac)
+
 
 ## Data Diri
 Theresia Tarianingsih
