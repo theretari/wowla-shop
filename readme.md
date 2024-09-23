@@ -2,32 +2,19 @@
 http://theresia-tarianingsih-wowlashopp.pbp.cs.ui.ac.id/
 
 # Soal dan Jawaban Pertanyaan
-1. Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
-Penggunaan data delivery sangat penting dalam mengimplementasikan sebuah platform karena seluruh pengguna platform tentunya membutuhkan data sehingga dapat melakukan interaksi dengan platform. Platform memiliki beberapa layanan yang terintegrasi, maka dari itu data delivery membantu sinkronisasi data antara komponen-komponen yang ada pada platform.
-
-2. Menurutmu, mana yang lebih baik antara XML dan JSON? Mengapa JSON lebih populer dibandingkan XML?
-Menurut saya JSON lebih baik dibandingkan dengan XML karena JSON memiliki struktur yang lebih sederhana berkat fitur ```pretty print``` sedangkan XML memiliki sintaks yan lebih kompleks sehingga sulit dibaca secara visual. JSON juga lebih mudah diolah jika ingin dilakukan pengambilan data, hanya dengan menggunakan Javascript. Maka dari itu JSON lebih populer karena lebih mudah dipahami dan lebih mudah digunakan dalam pengembangan web.
-
-3. Jelaskan fungsi dari method is_valid() pada form Django dan mengapa kita membutuhkan method tersebut?
-```is_valid()``` merupakan method yan digunakan untuk memeriksa validasi pada setiap field form program django. Method ini mereturn nilai boolean, mengembalikan True jika valid dan False jika tidak valid. Method ini diperlukan supaya memastikan daa-data yang diinput user sesuai dengan apa yang telah diprogram pada form.
-
-4. Mengapa kita membutuhkan csrf_token saat membuat form di Django? Apa yang dapat terjadi jika kita tidak menambahkan csrf_token pada form Django? Bagaimana hal tersebut dapat dimanfaatkan oleh penyerang?
-```CSRF_token``` digunakan untuk memastikan bahwa request yang dikirimkan pada server berasal dari user yang diinginkan. Jika tolen CSRF ini bernilai valid maka request akan segera diproses jika tidak, maka akan ditolak. Jika form pada project django tidak dilintungi oleh CSRF token maka website kita akan rentan untuk mendapatkan seranan Cross-Site Request Forgery sehingga keamanan website akan terancam. Penyerang mungkun saja membuat sebuah form yang mungkin bisa digunakan sebagai wadah untuk pencurian data pengguna web.
-
-5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
-pertama saya membuat sebuah direktori templates baru pada root folder lalu membuat berkas HTML baru yakni ```base.html``` sebagai template dasar yang dapat digunakan sebagai kerangka umum untuk halaman web. Setelah itu saya mengedit ```settings.py``` lalu pada subdirektori main saya mengubah ```main.html``` lalu mengubah primary key pada ```models.py``` nebhjadi UUID sehingga menjaga keamanan web. Sebelum itu saya melakukan migrasi. Lalu saya membuat form input data yang menampilkan imput-imput produk yan dijual pada shop saya dengan method ```POST``` setelah itu saya mengubah context dan ```views.py``` sehingga dapat menampilkan halaman saat menambahkan form. Lalu menambahkan berkas html baru sebagai laman untuk mengisi input form dan menintegrasikannya denan ```main.html```. Setelah itu saya mencoba untuk mengintegrasikan masing-masing data dalam bentuk XML dan JSON. Lalu mencoba untuk bisa melihat data-data tersebut melalui PostMan. Lalu saya melakukan push ke github
-
-# Screensshot Postman
-mengakses xml
-![Screenshot 2024-09-15 233301](https://github.com/user-attachments/assets/bedcab50-31bf-4f4c-81e9-7a5bfea825b4)
-mengakses json
-![Screenshot 2024-09-15 233619](https://github.com/user-attachments/assets/eb7a9971-ca76-45f1-b857-c03854e16432)
-![Screenshot 2024-09-15 233632](https://github.com/user-attachments/assets/391800d8-e765-4d20-83ec-2e3daffc7f00)
-mengakses xml by ID
-![Screenshot 2024-09-15 233911](https://github.com/user-attachments/assets/d2d2fdc6-b7ea-4448-bb4c-11886560858f)
-mengakses json by ID
-![Screenshot 2024-09-15 233956](https://github.com/user-attachments/assets/49f25838-7afe-4975-bf46-fa88e58ab4ac)
-
+1.  Apa perbedaan antara HttpResponseRedirect() dan redirect()
+    ```HttpResponseRedirect()``` : argumen pertama yang digunakan hanya dapat berupa URL yang menghasilkan respons redirect sehingga dapat memuat ulang halaman URL
+    ```redirect()``` : akan mengembalikan hasil dari ```HttpResponseRedirect()``` dapat menerima model, view, atau urls sebagau argumen tujuan sehingga lebih fleksibel (sumber: https://stackoverflow.com/questions/13304149/what-the-difference-between-using-django-redirect-and-httpresponseredirect)
+2.  Jelaskan cara kerja penghubungan model Product dengan User!
+     Cara penghubungan antara model Product dan User dilakukan menggunakan one to many field hal ini disebabkan karena satu user dapat memiliki banyak produk(dalam konteks website ini). dalam kode saya mengimplementasikannya dengan ```user = models.ForeignKey(User, on_delete=models.CASCADE)``` di models.py
+3.  Apa perbedaan antara authentication dan authorization, apakah yang dilakukan saat pengguna login? Jelaskan bagaimana Django mengimplementasikan kedua konsep tersebut.
+    ```autentification```: untuk menentukan siapa(indentitas pengguna) yang sedang login apakah user dan passwordnya sudah benar atau belum
+    ```authorization```: untuk menentukan roles user apa saja yang dapat user akses dan tidak dapat user akses
+    Dalam Django kedua konsep ini adalah dengan mengimport ```from django.contrib.auth import authenticate, login``` ```from django.contrib.auth.decorators import login_required``` serta menambahkan decoration ```@login_required(login_url='/login')``` tidak lupa untuk mengimplementasikan fungsi ```def login_user(request):```
+4.  Bagaimana Django mengingat pengguna yang telah login? Jelaskan kegunaan lain dari cookies dan apakah semua cookies aman digunakan?
+     Django mengingat penggunanya dengan menggunakan session cookies yang disimpan dalam browser. Dalam proyek Django digunakan ```login(request, user)```. Kegunaan lain dari cookies adalah untuk menyimpan data sementara serta mengingat preferensi pengguna sehingga iklan-iklan yang ditampilkan pada browser berdasarkan algoritma pencaharian pengguna. Tidak semua cookies aman, beberapa cookies akan menyebabkan beberapa ancaman masalah keamanan dan privasi.
+5.  Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+pertama saya membuat form register dengan mengimport ```UserCreationForm``` lalu saya membuat fungsi register pada ```views.py``` setelah itu saya membuat interface untuk register denan membuat file ```register.html``` setelah itu menambahkan path url register ke ```urls.py```. Setelah itu saya membuat fungsi login_user pada ```views.py``` lalu membuat interface login dengan membuat ```login.html``` setelah itu menambahkan path url loin pada ```urls.py```. setelah itu saya membuat fungsi logout_user pada ```views.py``` dan menambahkan button logout pada ```main.html``` serta menambahkan parth url logout pada ```urls.py``` setelah itu saya membuat restriksi login sehingga produk-produk toko hanya dapat diakses pada pemilik akun. lalu saya menyetin cookies untuk melihat aktivitas last login dan mengintegrasikan Product dengan User. setelah itu saya membuat migrasi dan push ke github. Tidak lupa saya run server terlebih dahulu di lokal sebelum dipush.
 
 ## Data Diri
 Theresia Tarianingsih
