@@ -30,11 +30,13 @@ pertama saya membuat form register dengan mengimport ```UserCreationForm``` lalu
  ```border```: merupakan garis tepian yang membungkus konten dan paddingnya sehingga memberikan bingkai visual pada elemen
  ```padding```: ruang di dalam elemen dan border elemen sehingga konten tidak menempel langsung pada border
  Contoh implementasi dalam CSS:
- ```.element {
+ ```
+ .element {
   margin: 20px;
   padding: 15px;
   border: 3px solid blue;
-}```
+}
+```
  4. Jelaskan konsep flex box dan grid layout beserta kegunaannya!
  ```flex box```: merupakan sebuah tata letak pada sebuah dimensi yang digunakan untuk menyusun elemen dalam satu arah pada sumbu X atau sumbu Y. Flex box berguna jika kita hanya perlu menatur elemen secara sederhana dalam satu dimensi
  ```grid layout```: merupakan sebuah tata letak 2 dimensi yang dapat meletakkan elemen secara horizontal dan vertikal(membentuk baris dan kolom). Grid layout berguna jika kita ingin mengggunakan tata letak yang terdiri dari 2 dimensi

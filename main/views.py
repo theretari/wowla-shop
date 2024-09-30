@@ -23,6 +23,7 @@ def show_main(request):
         'npm' : '2306208810',
         'product_entries' : product_entries,
         'last_login': request.COOKIES['last_login'],
+        # 'last_login': request.COOKIES.get('last_login', 'Tidak ada data login terakhir'),
     }
 
     return render(request, "main.html", context)

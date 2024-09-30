@@ -1,6 +1,6 @@
 {% load static %}
-<nav class="bg-blue-600 shadow-lg fixed top-0 left-0 z-40 w-screen">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<nav class="bg-blue-600 shadow-lg fixed top-0 left-0 z-40 w-screen animate-shine">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
       <div class="flex items-center justify-between h-16">
         <div class="flex items-center">
           <img src="{% static 'image/Wowla.png' %}" alt="Ikon Wowla Shop" class="w-12 h-12 mr-2">
@@ -10,7 +10,6 @@
           {% if user.is_authenticated %}
             <span class ="text-white mr-4 font-bold">Home </span>
             <span class ="text-white mr-4 font-bold">Products </span>
-            <span class="text-white mr-4 font-semibold">Hello, {{ user.username }}</span>
             <a href="{% url 'main:logout' %}" class="text-center bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition duration-300">
               Logout
             </a>
@@ -33,12 +32,11 @@
       </div>
     </div>
     <!-- Mobile menu -->
-    <div class="mobile-menu hidden md:hidden  px-4 w-full md:max-w-full">
-      <div class="pt-2 pb-3 space-y-1 mx-auto">
+    <div class="mobile-menu hidden md:hidden  px-4 w-full md:max-w-full animate-shine">
+      <div class="pt-2 pb-3 space-y-1 mx-auto ">
         {% if user.is_authenticated %}
             <span class ="text-white mr-4 font-bold">Home</span>
             <span class ="text-white mr-4 font-bold">Products</span>
-          <span class="block text-gray-300 px-3 py-2">Welcome, {{ user.username }}</span>
           <a href="{% url 'main:logout' %}" class="block text-center bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition duration-300">
             Logout
           </a>

@@ -35,3 +35,19 @@
 .animate-bounce {
     animation: bounce 3s infinite;
 }
+
+@keyframes typing {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+/* Animasi Blink (Cursor) */
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.animate-typing {
+    border-right: 2px solid; /* Membuat kursor berkedip */
+    white-space: nowrap; /* Mencegah teks terbalik ke baris berikutnya */
+    animation: typing 3.5s steps(1, end), blink 0.75s infinite;
+}
